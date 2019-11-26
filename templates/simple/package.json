@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-cloud-event",
+  "version": "0.1.1",
+  "description": "Simple Node.js function for Cloud Events",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lance/ce-functions.git"
+  },
+  "scripts": {
+    "test": "echo 'No tests yet!'"
+  }
+}

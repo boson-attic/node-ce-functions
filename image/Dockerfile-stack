@@ -1,0 +1,41 @@
+FROM node:12-alpine
+
+ENV APPSODY_PROJECT_DIR=/home/node
+
+ENV APPSODY_MOUNTS=/:/home/node/usr
+ENV APPSODY_DEPS=/home/node/usr/node_modules
+
+ENV APPSODY_WATCH_DIR=/home/node/usr
+ENV APPSODY_WATCH_IGNORE_DIR=/home/node/usr/node_modules
+ENV APPSODY_WATCH_REGEX="^.*.js$"
+
+ENV APPSODY_INSTALL="npm install && npm audit fix"
+
+ENV APPSODY_RUN="npm start"
+ENV APPSODY_RUN_ON_CHANGE="npm start"
+ENV APPSODY_RUN_KILL=true
+
+ENV APPSODY_DEBUG="npm start --node-options --inspect=0.0.0.0"
+ENV APPSODY_DEBUG_ON_CHANGE="npm start --node-options --inspect=0.0.0.0"
+ENV APPSODY_DEBUG_KILL=true
+
+ENV APPSODY_TEST="npm test && npm test --prefix usr"
+ENV APPSODY_TEST_ON_CHANGE=""
+ENV APPSODY_TEST_KILL=false
+
+ENV APPSODY_PREP="npm install --prefix usr && npm audit fix --prefix usr"
+
+COPY ./LICENSE /licenses/
+COPY ./project /home/node
+COPY ./config /config
+WORKDIR /home/node
+RUN npm install --no-package-lock
+
+USER root
+RUN su - && apk update && apk upgrade && apk add bash
+
+ENV PORT=8080
+ENV NODE_PATH=/home/node/usr/node_modules
+
+EXPOSE 8080
+EXPOSE 9229

@@ -1,0 +1,10 @@
+name: Node.js Cloud Events
+version: 0.0.1
+description: Serverless Node.js runtime for Cloud Events
+license: Apache-2.0
+language: nodejs
+maintainers:
+  - name: Lance Ball
+    email: lball@redhat.com
+    github-id: lance
+default-template: simple

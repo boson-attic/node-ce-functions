@@ -1,0 +1,27 @@
+{
+  "name": "ce-functions",
+  "version": "0.0.1",
+  "description": "Node.js Cloud Event Function Stack",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appsody/stacks.git",
+    "directory": "experimental/ce-functions/image/project"
+  },
+  "main": "server.js",
+  "scripts": {
+    "debug": "node --inspect=0.0.0.0 server.js",
+    "start": "node server.js",
+    "test": "tape test/test.js | tap-spec"
+  },
+  "dependencies": {
+    "@redhat/faas-js-runtime": "0.0.4",
+    "cloudevents-sdk": "v0.3.1",
+    "overload-protection": "^1.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}

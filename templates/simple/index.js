@@ -1,4 +1,7 @@
 
 module.exports = function (context) {
-  return `Hello! Got: ${context.headers}`;
+  return {
+    message: `Hello from Cloud Events!`,
+    event: context.cloudevent
+  };
 }

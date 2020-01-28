@@ -1,6 +1,6 @@
 name: Node.js Cloud Events
 version: 0.0.1
-description: Serverless Node.js runtime for Cloud Events
+description: Serverless Node.js function runtime for Cloud Events
 license: Apache-2.0
 language: nodejs
 maintainers:

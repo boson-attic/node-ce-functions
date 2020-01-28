@@ -1,7 +1,8 @@
+'use strict';
 
 module.exports = function (context) {
   return {
     message: `Hello from Cloud Events!`,
-    event: context.cloudevent
+    receivedEvent: context.cloudevent
   };
 }

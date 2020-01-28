@@ -65,4 +65,17 @@ test('Exposes liveness URL', t => {
     });
 });
 
+test('Exposes liveness URL', t => {
+  t.plan(2);
+  request(server)
+    .get('/health/liveness')
+    .expect(200)
+    .expect('Content-type', /text/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.equal(res.text, 'OK');
+      t.end();
+    });
+});
+
 test.onFinish(runtime.close);

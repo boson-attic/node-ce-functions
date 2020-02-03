@@ -1,8 +1,8 @@
-name: Node.js Cloud Events
+name: JavaScript FaaS
 version: 0.0.1
-description: Serverless Node.js function runtime for Cloud Events
+description: JavaScript Function Runtime
 license: Apache-2.0
-language: nodejs
+language: JavaScript
 maintainers:
   - name: Lance Ball
     email: lball@redhat.com

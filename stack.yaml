@@ -4,7 +4,7 @@ description: JavaScript Function Runtime
 license: Apache-2.0
 language: JavaScript
 maintainers:
-  - name: Lance Ball
-    email: lball@redhat.com
-    github-id: lance
+  - name: lkingland
+    email: lkingland2038@gmail.com
+    github-id: lkingland
 default-template: simple

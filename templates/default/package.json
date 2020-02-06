@@ -1,13 +1,17 @@
 {
-  "name": "nodejs-cloud-event",
-  "version": "0.1.1",
-  "description": "Simple Node.js function for Cloud Events",
+  "name": "event-handler",
+  "version": "0.1.0",
+  "description": "Node.js CloudEvent Handler",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lance/ce-functions.git"
+    "url": ""
   },
   "scripts": {
-    "test": "echo 'No tests yet!'"
+    "test": "node test/*.js"
+  },
+  "devDependencies": {
+    "tape": "^4.13.0",
+    "cloudevents-sdk": "^1.0.0"
   }
 }

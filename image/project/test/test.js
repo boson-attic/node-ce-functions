@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const runtime = require('..');
-const test = require('tape');
-const request = require('supertest');
+const runtime = require("..");
+const test = require("tape");
+const request = require("supertest");
 
 // test('Loads a user function with dependencies', t => {
 //   framework(func, server => {
@@ -20,7 +20,6 @@ const request = require('supertest');
 //     }, { log: false });
 // });
 
-
 // test('Can respond via an async function', t => {
 //   framework(func, server => {
 //     t.plan(2);
@@ -37,43 +36,30 @@ const request = require('supertest');
 //       });
 //     }, { log: false });
 // });
-const server = 'http://localhost:8080';
+const server = "http://localhost:8080";
 
-test('Exposes readiness URL', t => {
+test("Exposes readiness URL", t => {
   t.plan(2);
   request(server)
-    .get('/health/readiness')
+    .get("/health/readiness")
     .expect(200)
-    .expect('Content-type', /text/)
+    .expect("Content-type", /text/)
     .end((err, res) => {
-      t.error(err, 'No error');
-      t.equal(res.text, 'OK');
+      t.error(err, "No error");
+      t.equal(res.text, "OK");
       t.end();
     });
 });
 
-test('Exposes liveness URL', t => {
+test("Exposes liveness URL", t => {
   t.plan(2);
   request(server)
-    .get('/health/liveness')
+    .get("/health/liveness")
     .expect(200)
-    .expect('Content-type', /text/)
+    .expect("Content-type", /text/)
     .end((err, res) => {
-      t.error(err, 'No error');
-      t.equal(res.text, 'OK');
-      t.end();
-    });
-});
-
-test('Exposes liveness URL', t => {
-  t.plan(2);
-  request(server)
-    .get('/health/liveness')
-    .expect(200)
-    .expect('Content-type', /text/)
-    .end((err, res) => {
-      t.error(err, 'No error');
-      t.equal(res.text, 'OK');
+      t.error(err, "No error");
+      t.equal(res.text, "OK");
       t.end();
     });
 });

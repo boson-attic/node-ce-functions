@@ -1,6 +1,6 @@
 name: JavaScript FaaS
 version: 0.0.1
-description: JavaScript Function Runtime
+description: Node.js Function Runtime
 license: Apache-2.0
 language: JavaScript
 maintainers:

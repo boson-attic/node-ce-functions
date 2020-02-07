@@ -10,7 +10,7 @@ let server;
 
 module.exports.close = function close() {
   if (server) server.close();
-}
+};
 
 try {
   framework(require(userPath), LISTEN_PORT, srv => {

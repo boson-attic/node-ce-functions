@@ -1,4 +1,4 @@
-FROM node:13
+FROM node:12
 
 ENV APPSODY_PROJECT_DIR=/project
 ENV APPSODY_MOUNTS=.:/project/function

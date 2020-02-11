@@ -1,4 +1,4 @@
-FROM node:13 as installer
+FROM node:12 as installer
 ARG home_dir="/project"
 ARG user_app="/project/function"
 
@@ -16,7 +16,7 @@ RUN npm install --production --no-package-lock && \
     [ ! -d /project/function/node_modules ] && mkdir /project/function/node_modules
 
 # Copy the dependencies into an alpine image
-FROM node:13-alpine
+FROM node:12-alpine
 COPY --chown=node:node . /project
 
 # Copy all dependencies

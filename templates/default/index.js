@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = function(context) {
-  console.log(context);
+  context.log.info(context);
 };

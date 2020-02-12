@@ -14,9 +14,11 @@ ENV APPSODY_TEST_KILL=false
 
 ENV APPSODY_RUN="npm start"
 ENV APPSODY_RUN_ON_CHANGE="$APPSODY_RUN"
+ENV APPSODY_RUN_KILL=true
 
 ENV APPSODY_DEBUG="npm start --node-options --inspect=0.0.0.0"
 ENV APPSODY_DEBUG_ON_CHANGE="$APPSODY_DEBUG"
+ENV APPSODY_DEBUG_KILL=true
 
 ENV APPSODY_PREP="npm install --prefix function && npm audit fix --prefix function"
 

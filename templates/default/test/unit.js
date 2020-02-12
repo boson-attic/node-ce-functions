@@ -6,13 +6,15 @@ const cloudevents = require('cloudevents-sdk/v1');
 
 // Ensure that the function completes cleanly when passed a valid event.
 test('Handles a valid event', t => {
+  t.plan(1);
   // A valid event includes id, type and source at a minimum.
-  let e = cloudevents.event();
-  e.id('TEST-EVENT-01');
-  e.type('com.example.cloudevents.test');
-  e.source('http://localhost:8080/');
+  const cloudevent = cloudevents.event()
+    .id('TEST-EVENT-01')
+    .type('com.example.cloudevents.test')
+    .source('http://localhost:8080/')
+    .data({ message: 'hello' });
 
   // Invoke the function with the valid event, which should compelte without error.
-  func({ cloudevent: e });
+  t.ok(func({ cloudevent }));
   t.end();
 });

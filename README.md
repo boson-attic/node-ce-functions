@@ -76,7 +76,7 @@ This template only has a simple `index.js` file which implements the `/` endpoin
     ```bash
     mkdir my-project
     cd my-project
-    appsody init experimental/ce-functions
+    appsody init experimental/node-ce-functions
     ```
 
     This will initialize a Node.js Cloud Event functions project using the default template.

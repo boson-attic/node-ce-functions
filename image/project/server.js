@@ -3,14 +3,14 @@
 const path = require('path');
 const framework = require('@redhat/faas-js-runtime');
 
-const userPath = path.join(`${__dirname}`, 'user-app');
+const userPath = path.join(`${__dirname}`, 'function');
 const LISTEN_PORT = process.env.LISTEN_PORT || 8080;
 
 let server;
 
 module.exports.close = function close() {
   if (server) server.close();
-}
+};
 
 try {
   framework(require(userPath), LISTEN_PORT, srv => {

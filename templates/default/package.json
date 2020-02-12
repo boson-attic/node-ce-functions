@@ -1,0 +1,17 @@
+{
+  "name": "event-handler",
+  "version": "0.1.0",
+  "description": "Node.js CloudEvent Handler",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "node test/*.js"
+  },
+  "devDependencies": {
+    "tape": "^4.13.0",
+    "cloudevents-sdk": "^1.0.0"
+  }
+}

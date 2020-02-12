@@ -1,35 +1,36 @@
 FROM node:12
 
 ENV APPSODY_PROJECT_DIR=/project
-ENV APPSODY_MOUNTS=/:/project/user-app
-ENV APPSODY_DEPS=/project/user-app/node_modules
+ENV APPSODY_MOUNTS=.:/project/function
+ENV APPSODY_DEPS=/project/function/node_modules
 
-ENV APPSODY_WATCH_DIR=/project/user-app
-ENV APPSODY_WATCH_IGNORE_DIR=/project/user-app/node_modules
+ENV APPSODY_WATCH_DIR=/project/function
+ENV APPSODY_WATCH_IGNORE_DIR=/project/function/node_modules
 ENV APPSODY_WATCH_REGEX="^.*.js$"
 
-ENV APPSODY_RUN="npm start"
-ENV APPSODY_RUN_ON_CHANGE="npm start"
-ENV APPSODY_RUN_KILL=true
-
-ENV APPSODY_DEBUG="npm start --node-options --inspect=0.0.0.0"
-ENV APPSODY_DEBUG_ON_CHANGE="npm start --node-options --inspect=0.0.0.0"
-ENV APPSODY_DEBUG_KILL=true
-
-ENV APPSODY_TEST="npm test && npm test --prefix user-app"
+ENV APPSODY_TEST="npm test && npm test --prefix function"
 ENV APPSODY_TEST_ON_CHANGE=""
 ENV APPSODY_TEST_KILL=false
 
-ENV APPSODY_PREP="npm install --prefix user-app && npm audit fix --prefix user-app"
+ENV APPSODY_RUN="npm start"
+ENV APPSODY_RUN_ON_CHANGE="$APPSODY_RUN"
+ENV APPSODY_RUN_KILL=true
+
+ENV APPSODY_DEBUG="npm start --node-options --inspect=0.0.0.0"
+ENV APPSODY_DEBUG_ON_CHANGE="$APPSODY_DEBUG"
+ENV APPSODY_DEBUG_KILL=true
+
+ENV APPSODY_PREP="npm install --prefix function && npm audit fix --prefix function"
 
 COPY ./LICENSE /licenses/
 COPY ./project /project
 COPY ./config /config
+
 WORKDIR /project
 RUN npm install --no-package-lock
 
 ENV PORT=8080
-ENV NODE_PATH=/project/user-app/node_modules
+ENV NODE_PATH=/project/function/node_modules
 
 EXPOSE 8080
 EXPOSE 9229

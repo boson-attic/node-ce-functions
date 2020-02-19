@@ -29,6 +29,7 @@ test('Handles a valid event', t => {
       .end((err, res) => {
         t.error(err, 'No error');
         // Check response values that your function produces
+        // Uncomment this line to validate the template implementation
         // t.equal(res.body.data.message, 'hello');
         t.end();
         server.close();

@@ -8,11 +8,13 @@
     "url": ""
   },
   "scripts": {
-    "test": "node test/*.js"
+    "test": "node test/*.js",
+    "local": "node local.js"
   },
   "devDependencies": {
     "@redhat/faas-js-runtime": "0.2.0",
     "cloudevents-sdk": "^1.0.0",
+    "death": "^1.1.0",
     "supertest": "^4.0.2",
     "tape": "^4.13.0"
   }

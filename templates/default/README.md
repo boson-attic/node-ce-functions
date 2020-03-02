@@ -54,5 +54,15 @@ appsody test
 
 ## Deployment
 
-TODO: Document deploying this cluster to a Kubernetes cluster running Knative Serving and Eventing.
+```shell
+PROJECT=my-name-space # replace with your namespace
+DOCKER_REGISTRY=quay.io/my-user # replace with your registry
+FUNCTION_NAME=my-function # replace with your function name
 
+# build, create image and push it to the registry
+appsody build --tag "${DOCKER_REGISTRY}/${FUNCTION_NAME}:v1" --push --knative
+
+# deploy the app as knative service (and installs appsody operator if needed)
+appsody deploy --knative --no-build -n ${PROJECT}
+```
+When doing first deploy (that includes appsody oprator installation into the namespace) there might be a timing issue [Appsody F.A.Q.](https://appsody.dev/docs/faq/#3-why-is-appsody-deploy-not-displaying-the-url-of-the-knative-service)

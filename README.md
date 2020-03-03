@@ -73,12 +73,18 @@ This template only has a simple `index.js` file which implements the `/` endpoin
 
 ## Getting Started
 
+0. Add the boson stack repository
+
+    ```bash
+    appsody repo add boson https://github.com/openshift-cloud-functions/node-ce-functions/releases/v0.0.1/download/boson-index.yaml
+    ```
+
 1. Create a new folder in your local directory and initialize it using the Appsody CLI, e.g.:
 
     ```bash
     mkdir my-project
     cd my-project
-    appsody init experimental/node-ce-functions
+    appsody init boson/node-ce-functions
     ```
 
     This will initialize a Node.js Cloud Event functions project using the default template.

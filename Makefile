@@ -1,7 +1,10 @@
 all: test
 
+publish: test
+	./ci/publish.sh
+
 build: clean
-	appsody stack package
+	appsody stack package --image-namespace boson --image-registry quay.io --verbose
 
 test: build
 	appsody stack validate --no-package

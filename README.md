@@ -1,5 +1,7 @@
 ## Node.js Cloud Events Stack
 
+[![CircleCI](https://circleci.com/gh/openshift-cloud-functions/node-ce-functions/tree/master.svg?style=svg)](https://circleci.com/gh/openshift-cloud-functions/node-ce-functions/tree/master)
+
 **THIS IS A PROOF OF CONCEPT IMPLEMENTATION**
 
 This stack provides a Node.js framework for executing a function that

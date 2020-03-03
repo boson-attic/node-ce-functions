@@ -1,0 +1,13 @@
+version: 2
+general:
+  branches:
+    only:
+      - ci # TODO: Change this once we have CI building correctly
+jobs:
+ build:
+   machine: true
+    image: cimg/base:2020.03
+   steps:
+     - checkout
+     - run: ./ci/install_appsody.sh
+     - run: make test

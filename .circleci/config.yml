@@ -2,10 +2,11 @@ version: 2
 general:
   branches:
     only:
-      - ci # TODO: Change this once we have CI building correctly
+      - master
+      - ci
 jobs:
  build:
-   machine:
+   machine: # Because appsody mounts local directories into running test container
     image: ubuntu-1604:201903-01
    steps:
      - checkout

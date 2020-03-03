@@ -5,8 +5,8 @@ general:
       - ci # TODO: Change this once we have CI building correctly
 jobs:
  build:
-   machine: true
-    image: cimg/base:2020.03
+   machine:
+    image: ubuntu-1604:201903-01
    steps:
      - checkout
      - run: ./ci/install_appsody.sh

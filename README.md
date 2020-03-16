@@ -76,7 +76,7 @@ This template only has a simple `index.js` file which implements the `/` endpoin
 0. Add the boson stack repository
 
     ```bash
-    appsody repo add boson https://github.com/openshift-cloud-functions/node-ce-functions/releases/v0.0.1/download/boson-index.yaml
+    appsody repo add boson https://github.com/openshift-cloud-functions/stacks/releases/latest/download/boson-index.yaml
     ```
 
 1. Create a new folder in your local directory and initialize it using the Appsody CLI, e.g.:
@@ -119,6 +119,12 @@ Upgrade your CLI to the latest version and add the experimental repo:
 2. appsody repo add experimental https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 
 You should now be able to [initialise your application](#Getting-Started).
+
+
+## Developing
+
+TODO: Define steps for packaging the stack, releasing a new version, and publishing to the Stacks repisotory index.
+
 
 ## License
 

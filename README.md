@@ -123,8 +123,16 @@ You should now be able to [initialise your application](#Getting-Started).
 
 ## Developing
 
-TODO: Define steps for packaging the stack, releasing a new version, and publishing to the Stacks repisotory index.
+1) update `stack.yaml` with a new version (will be used for the git version tag as well).
+2) Commit all changes (commit messages are by default used for the release message body).
+3) Build (package) the stack using `make build`  (runs tests and publishes).
+4) Publish (release) the built artifacts using `make publish`
+   - Tags the commit with version from stack.yaml
+   - Pushes tagged image to quay.io
+   - Releases the template archive to GitHub releases for the given version
+   - Update local boson stack repository index
 
+The new stack has now been published.  To release it, publish an update to the stack index using instructions in https://github.com/openshift-cloud-functions/stacks/#releasing .
 
 ## License
 

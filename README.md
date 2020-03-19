@@ -110,17 +110,6 @@ This template only has a simple `index.js` file which implements the `/` endpoin
     - Readiness endpoint: http://localhost:8080/health/readiness
 
 
-## Configuring Experimental Repo
-
-Upgrade your CLI to the latest version and add the experimental repo:
-
-1. `brew upgrade appsody` or for other platforms visit the [upgrading appsody section](https://appsody.dev/docs/getting-started/installation).
-
-2. appsody repo add experimental https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
-
-You should now be able to [initialise your application](#Getting-Started).
-
-
 ## Developing
 
 1) update `stack.yaml` with a new version (will be used for the git version tag as well).

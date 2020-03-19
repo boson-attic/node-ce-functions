@@ -1,5 +1,5 @@
 name: JavaScript FaaS
-version: 0.0.1
+version: 0.0.2
 description: Node.js function runtime for cloud events
 license: Apache-2.0
 language: JavaScript

@@ -14,7 +14,7 @@ const Spec = {
   source: 'ce-source'
 };
 
-test('Handles a valid event', t => {
+test('Integration: handles a valid event', t => {
   runtime(func, server => {
     t.plan(1);
     request(server)

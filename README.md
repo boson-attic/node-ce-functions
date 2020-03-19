@@ -73,12 +73,18 @@ This template only has a simple `index.js` file which implements the `/` endpoin
 
 ## Getting Started
 
+0. Add the boson stack repository
+
+    ```bash
+    appsody repo add boson https://github.com/openshift-cloud-functions/stacks/releases/latest/download/boson-index.yaml
+    ```
+
 1. Create a new folder in your local directory and initialize it using the Appsody CLI, e.g.:
 
     ```bash
     mkdir my-project
     cd my-project
-    appsody init experimental/node-ce-functions
+    appsody init boson/node-ce-functions
     ```
 
     This will initialize a Node.js Cloud Event functions project using the default template.
@@ -113,6 +119,20 @@ Upgrade your CLI to the latest version and add the experimental repo:
 2. appsody repo add experimental https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 
 You should now be able to [initialise your application](#Getting-Started).
+
+
+## Developing
+
+1) update `stack.yaml` with a new version (will be used for the git version tag as well).
+2) Commit all changes (commit messages are by default used for the release message body).
+3) Build (package) the stack using `make build`  (runs tests and publishes).
+4) Publish (release) the built artifacts using `make publish`
+   - Tags the commit with version from stack.yaml
+   - Pushes tagged image to quay.io
+   - Releases the template archive to GitHub releases for the given version
+   - Update local boson stack repository index
+
+The new stack has now been published.  To release it, publish an update to the stack index using instructions in https://github.com/openshift-cloud-functions/stacks/#releasing .
 
 ## License
 

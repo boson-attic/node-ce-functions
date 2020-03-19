@@ -63,10 +63,8 @@ if [ ! -d ${build_dir} ] ; then
   success_or_bail $? "Can't create build directory ${build_dir}"
 fi
 
-# TODO: is my appsody binary out of date?  The source archive is not created
-# and is thus causing this task to fail.
-# cp ${source_archive} ${build_dir}
-# success_or_bail $? "Can't copy source archive ${source_archive}"
+cp ${source_archive} ${build_dir}
+success_or_bail $? "Can't copy source archive ${source_archive}"
 
 cp ${template_archive} ${build_dir}
 success_or_bail $? "Can't copy template archive ${template_archive}"

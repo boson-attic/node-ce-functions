@@ -16,7 +16,7 @@ RUN npm install --production --no-package-lock && \
     [ ! -d /project/function/node_modules ] && mkdir /project/function/node_modules
 
 # Copy the dependencies into an alpine image
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.1
+FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
 
 RUN echo -e "[nodejs]\nname=nodejs\nstream=12\nprofiles=devel\nstate=enabled" > /etc/dnf/modules.d/nodejs.module && \
     microdnf install -y nodejs

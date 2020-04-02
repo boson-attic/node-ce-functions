@@ -15,7 +15,7 @@ COPY ./function/package.json ./
 RUN npm install --production --no-package-lock && \
     [ ! -d /project/function/node_modules ] && mkdir /project/function/node_modules
 
-# Copy the dependencies into an alpine image
+# Copy the dependencies into an ubi image
 FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
 
 COPY ./nodejs.module /etc/dnf/modules.d/

@@ -15,13 +15,18 @@ COPY ./function/package.json ./
 RUN npm install --production --no-package-lock && \
     [ ! -d /project/function/node_modules ] && mkdir /project/function/node_modules
 
-# Copy the dependencies into an alpine image
-FROM node:12-alpine
-COPY --chown=node:node . /project
+# Copy the dependencies into an ubi image
+FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
+
+COPY ./nodejs.module /etc/dnf/modules.d/
+
+RUN microdnf install -y nodejs
+
+COPY --chown=1001:1001 . /project
 
 # Copy all dependencies
-COPY --chown=node:node --from=installer /project/function/node_modules /project/function/node_modules
-COPY --chown=node:node --from=installer /project/node_modules /project/node_modules
+COPY --chown=1001:1001 --from=installer /project/function/node_modules /project/function/node_modules
+COPY --chown=1001:1001 --from=installer /project/node_modules /project/node_modules
 
 WORKDIR /project
 
@@ -30,7 +35,7 @@ ENV NODE_PATH=/project/function/node_modules
 ENV NODE_ENV production
 ENV PORT 8080
 
-USER node
+USER 1001
 
 EXPOSE 8080
 CMD ["npm", "start"]

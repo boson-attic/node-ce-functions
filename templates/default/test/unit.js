@@ -15,6 +15,6 @@ test('Unit: andles a valid event', t => {
     .data({ message: 'hello' });
 
   // Invoke the function with the valid event, which should compelte without error.
-  t.ok(func({ cloudevent }));
+  t.ok(func({ cloudevent, log: { info: console.log } }));
   t.end();
 });

@@ -20,7 +20,7 @@ curl -X POST -d '{"hello": "world"}' \
   -H'Ce-id: 1' \
   -H'Ce-source: cloud-event-example' \
   -H'Ce-type: dev.knative.example' \
-  -H'Ce-specversion: 0.2' \
+  -H'Ce-specversion: 1.0' \
   http://localhost:8080
 ```
 

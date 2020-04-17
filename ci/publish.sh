@@ -75,5 +75,5 @@ success_or_bail $? "Can't copy index ${repo_index}"
 printf "\n${orange}Congratulations, you have successfully published ${patch}."
 printf "\n${orange}To make this update publicly available, release an updated boson stacks repository."
 printf "\n${orange}  (see https://github.com/boson-project/stacks/#releasing)."
-printf "${green}Now push the updates and tags:\n\n    ${purple}'git push origin release --follow-tags'${nc}\n"
+printf "${green}Now push the updates and tags:\n\n    ${purple}'git push origin master:release --follow-tags'${nc}\n"
 
